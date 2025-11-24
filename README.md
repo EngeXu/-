@@ -1,11 +1,103 @@
-<div align="center">
+# 🐶 狗狗法官：萌宠断案庭 (Judge Barkaby)
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+这是一个基于 Google Gemini API 的趣味情侣/朋友吵架评理应用。在这个应用中，由一只名为“巴卡比”的金毛寻回犬法官来审理案件，并给出充满“狗生哲理”的判决、评分和幽默建议。
 
-  <h1>Built with AI Studio</h2>
+## ✨ 功能特点
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+*   **AI 角色扮演**: 使用 Google Gemini 模型扮演一只公正、幽默且富有同理心的狗狗法官。
+*   **双人陈述**: 支持甲方和乙方分别输入各自的陈述和立场。
+*   **智能判决**: 自动分析谁更有道理（或平局），生成评分条、案情分析和建议。
+*   **可爱 UI**: 专为移动端优化的响应式设计，采用 Tailwind CSS 打造温馨治愈的视觉风格。
+*   **中文支持**: 针对中文语境优化了 Prompt，更懂中国情侣的梗。
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## 🛠️ 技术栈
 
-</div>
+*   **核心框架**: React 19 + TypeScript
+*   **构建工具**: Vite
+*   **样式库**: Tailwind CSS
+*   **AI 模型**: Google Gemini API (`@google/genai`)
+
+## 🚀 快速开始
+
+### 1. 克隆项目
+
+```bash
+git clone https://github.com/your-username/dog-judge.git
+cd dog-judge
+```
+
+### 2. 安装依赖
+
+确保你已经安装了 Node.js (推荐 v18+)。
+
+```bash
+npm install
+```
+
+### 3. 配置环境变量
+
+复制示例环境变量文件：
+
+```bash
+cp .env.example .env
+```
+
+打开 `.env` 文件，填入你的 Google Gemini API Key：
+
+```env
+# 必须以 VITE_ 开头，以便在前端代码中访问
+VITE_API_KEY=your_actual_api_key_here
+```
+
+> **注意**: 你可以从 [Google AI Studio](https://aistudio.google.com/) 获取免费的 API Key。
+
+### 4. 启动开发服务器
+
+```bash
+npm run dev
+```
+
+浏览器打开 `http://localhost:5173` 即可看到应用。
+
+## 📦 编译与部署
+
+### 构建生产版本
+
+```bash
+npm run build
+```
+
+构建产物将输出到 `dist` 目录。
+
+### 部署建议
+
+由于这是一个纯前端应用（Single Page Application），你可以将其免费部署到以下平台：
+
+*   **Vercel** (推荐):
+    1. 安装 Vercel CLI 或连接 GitHub 仓库。
+    2. 设置环境变量 `VITE_API_KEY`。
+    3. 框架预设选择 `Vite`。
+*   **Netlify**:
+    1. 拖拽 `dist` 文件夹或连接 GitHub。
+    2. 设置环境变量。
+*   **GitHub Pages**:
+    1. 需要配置 GitHub Action 进行构建。
+
+## 📂 项目结构
+
+```
+.
+├── components/       # React 组件 (LandingPage, ArgumentForm, VerdictView)
+├── services/         # API 调用逻辑 (geminiService)
+├── types.ts          # TypeScript 类型定义
+├── App.tsx           # 主应用入口
+├── index.html        # HTML 模板
+├── index.tsx         # React 挂载点
+├── index.css         # 全局样式 & Tailwind 指令
+├── vite.config.ts    # Vite 配置
+└── package.json      # 依赖管理
+```
+
+## 📄 许可证
+
+MIT License
